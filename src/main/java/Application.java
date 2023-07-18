@@ -51,8 +51,6 @@ public class Application {
                 .build();
         // добавлять нового пользователя с ролями в БД
         User addedUser1 = userDAO.addUser(user1);
-        addedUser1.setRoles(roles1);
-        userDAO.updateUser(addedUser1);
 
         Set<Role> roles2 = new HashSet<>();
         roles2.add(roleDAO.getById(5L));
@@ -66,8 +64,6 @@ public class Application {
                 .roles(roles2)
                 .build();
         User addedUser2 = userDAO.addUser(user2);
-        addedUser2.setRoles(roles2);
-        userDAO.updateUser(addedUser2);
 
         // получать список пользователей из БД
         System.out.println("Список всех пользователей:");
