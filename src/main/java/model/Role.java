@@ -11,16 +11,17 @@ import java.util.Set;
 @Builder
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "role_id")
     private Long id;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "type")
-    private typeOfRole typeOfRole;
+    private TypeOfRole typeOfRole;
 
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "user_role",

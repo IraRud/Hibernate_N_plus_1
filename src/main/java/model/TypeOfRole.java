@@ -1,6 +1,6 @@
 package model;
 
-public enum typeOfRole {
+public enum TypeOfRole {
     DEVELOPER,
     ANALYST,
     TESTER,

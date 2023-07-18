@@ -12,12 +12,13 @@ import java.util.Set;
 @Builder
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     private String name;
@@ -26,6 +27,6 @@ public class User {
     private LocalDateTime created;
     private LocalDateTime modified;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "users")
     private Set<Role> roles = new HashSet<>();
 }
