@@ -73,7 +73,7 @@ public class Application {
         System.out.println("Список всех пользователей:");
         userDAO.getAllUsers();
 
-        // получать конкретного пользователя (с его ролями) из БД
+        // получать конкретного пользователя из БД
         User foundUser = userDAO.getById(2L);
         System.out.println("Найденный пользователь" + foundUser);
 
